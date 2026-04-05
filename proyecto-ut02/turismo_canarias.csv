@@ -1,0 +1,51 @@
+id,isla,mes,anio,turistas,gasto_diario,alojamiento
+1,Tenerife,Enero,2023,450000,165.50,Hotel
+2,Gran Canaria,Enero,2023,380000,162.20,Hotel
+3,Lanzarote,Enero,2023,210000,158.30,Apartamento
+4,Fuerteventura,Enero,2023,180000,155.90,Hotel
+5,La Palma,Enero,2023,15000,132.10,Casa Rural
+6,La Gomera,Enero,2023,9000,128.40,Casa Rural
+7,El Hierro,Enero,2023,2500,115.00,Vivienda Vacacional
+8,Tenerife,Febrero,2023,470000,170.00,Hotel
+9,Gran Canaria,Febrero,2023,395000,168.00,Hotel
+10,Lanzarote,Febrero,2023,220000,160.00,Apartamento
+11,Fuerteventura,Febrero,2023,185000,157.00,Hotel
+12,La Palma,Febrero,2023,16000,135.00,Casa Rural
+13,Tenerife,Marzo,2023,510000,175.00,Hotel
+14,Gran Canaria,Marzo,2023,420000,172.00,Hotel
+15,Lanzarote,Marzo,2023,240000,165.00,Apartamento
+16,Fuerteventura,Marzo,2023,200000,160.00,Hotel
+17,Tenerife,Abril,2023,530000,180.00,Vivienda Vacacional
+18,Gran Canaria,Abril,2023,440000,178.00,Vivienda Vacacional
+19,Lanzarote,Abril,2023,250000,170.00,Hotel
+20,Fuerteventura,Abril,2023,210000,165.00,Hotel
+21,Tenerife,Mayo,2023,480000,160.00,Hotel
+22,Gran Canaria,Mayo,2023,370000,158.00,Hotel
+23,Lanzarote,Mayo,2023,200000,155.00,Apartamento
+24,Fuerteventura,Mayo,2023,170000,150.00,Hotel
+25,Tenerife,Junio,2023,550000,185.00,Hotel
+26,Gran Canaria,Junio,2023,460000,182.00,Hotel
+27,Lanzarote,Junio,2023,260000,175.00,Apartamento
+28,Fuerteventura,Junio,2023,220000,170.00,Hotel
+29,Tenerife,Julio,2023,600000,195.00,Vivienda Vacacional
+30,Gran Canaria,Julio,2023,510000,190.00,Vivienda Vacacional
+31,Lanzarote,Julio,2023,280000,185.00,Hotel
+32,Fuerteventura,Julio,2023,240000,180.00,Hotel
+33,Tenerife,Agosto,2023,650000,210.00,Hotel
+34,Gran Canaria,Agosto,2023,550000,205.00,Hotel
+35,Lanzarote,Agosto,2023,310000,200.00,Apartamento
+36,Fuerteventura,Agosto,2023,270000,195.00,Hotel
+37,Tenerife,Enero,2024,465000,175.00,Hotel
+38,Gran Canaria,Enero,2024,390000,172.00,Hotel
+39,Lanzarote,Enero,2024,225000,168.00,Apartamento
+40,Fuerteventura,Enero,2024,190000,162.00,Hotel
+41,La Palma,Enero,2024,18000,145.00,Casa Rural
+42,La Gomera,Enero,2024,11000,140.00,Casa Rural
+43,El Hierro,Enero,2024,3000,125.00,Vivienda Vacacional
+44,Tenerife,Febrero,2024,485000,182.00,Hotel
+45,Gran Canaria,Febrero,2024,410000,179.00,Hotel
+46,Lanzarote,Febrero,2024,235000,175.00,Apartamento
+47,Fuerteventura,Febrero,2024,198000,170.00,Hotel
+48,Tenerife,Marzo,2024,540000,190.00,Hotel
+49,Gran Canaria,Marzo,2024,450000,188.00,Hotel
+50,Lanzarote,Marzo,2024,260000,180.00,Apartamento
