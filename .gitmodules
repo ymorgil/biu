@@ -1,0 +1,3 @@
+[submodule "content/docs/biu"]
+	path = content/docs/biu
+	url = https://github.com/ymorgil/biu
