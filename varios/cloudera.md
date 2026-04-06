@@ -1,4 +1,4 @@
-# :cyclone: Descarga de cloudera
+# Descarga de cloudera
 
 Link para la descarga de la **MV_Cloudera** En primer lugar, para instalar la MV_Cloudera, necesitas tener instalado previamente VirtualBox. Como debes saber, VirtualBox es un gestor de máquinas virtuales de uso libre que puedes instalarte desde https://www.virtualbox.org/wiki/Downloads.
 

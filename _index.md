@@ -4,9 +4,6 @@ weight: 3
 bookCollapseSection: true
 ---
 
-# ASIR 2º - Administración de sistemas operativos
-
-
 # 🚀 Big Data Aplicado (IABD-BIU)
 
 
