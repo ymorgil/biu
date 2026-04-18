@@ -38,20 +38,8 @@ spark-worker-3:8080 ──┘
 Organizaremos el proyecto en carpetas y archivos Docker Compose. 
 >name es el nombre del alumnado.
 **Estructura sugerida:**
-```bash
-proyectout04name/
-├── docker-compose.yml          
-├── spark/                              # Configuración específica de Spark
-│   └── docker-compose.spark.yml        # Clúster Spark 
-├── monitoring/
-│   ├── prometheus.yml                  # Configuración de Prometheus
-│   ├── grafana.ini                     # Configuración de Grafana
-│   └── docker-compose.monitoring.yml   # Clúster Prometheus,Grafana,Alertmanager,exporter 
-├── ganglia/                            # Opcional: contenedor Ganglia
-│   └── docker-compose.ganglia.yml
-└── scripts/
-    └── start.sh                        # Script para levantar todo
-```
+![arquitectura](/web/img/sup04-arq.png)
+
 
 ## 2. Desplegar clúster Spark (1 master, 3 workers) con Docker
 ---
@@ -81,15 +69,48 @@ La segunda fila estará dedicada a los **nodos worker**. En esta sección tambi�
 
 Se valorará que el dashboard sea claro, coherente y útil para la monitorización del clúster, así como que todas las visualizaciones muestren datos correctamente.
 
+## 5. Reinicio del sistema de monitorización, análisis de incidencias
+---
+En este apartado se procederá al **reinicio** completo del sistema de monitorización previamente desplegado mediante contenedores, utilizando los mecanismos trabajados en clase para la parada y posterior arranque del entorno. Una vez restaurado el sistema, el alumnado deberá acceder nuevamente a la herramienta de visualización y comprobar su estado, prestando especial atención a la información generada en sesiones anteriores. 
 
+A partir de esta observación, se espera que identifiquen posibles cambios en el comportamiento del sistema, analicen las causas que han podido originar esta situación y proponfgan e implementen una solución técnica que resuelva la incidencia detectada y comprobar su eficacia mediante un nuevo reinicio del sistema, documentando todo el proceso seguido, desde la identificación del problema hasta la validación de la solución adoptada.
 
+## 6.  Ejecución del job de Spark SQL
+---
+Descarga el dataset de **Netflix desde Kaggle** y colócalo en la carpeta de Spark. Una vez disponible, ejecuta el job (job.py que estara en la carpeta Spark) desde el nodo master y anota los resultados que aparecen en la terminal para responder las siguientes preguntas:
+1. ¿Cuántos títulos hay de tipo Movie y cuántos de TV Show?
+2. ¿Qué país tiene más producciones en Netflix?
+3. ¿Cuál es el año con más lanzamientos?
+4. ¿Qué director tiene más títulos en el catálogo?
+5. ¿Cuál es la categoría más frecuente?
+
+## 7. Observación de métricas en Grafana
+---
+Mientras el job del apartado anterior está en ejecución, abre Grafana en http://localhost:3000 y observa cómo cambian los paneles del dashboard Spark Cluster Monitoring. Una vez finalizado el job responde las siguientes preguntas:
+
+1. ¿Qué cambio observaste en el uso de CPU durante la ejecución del job?
+2. ¿Cuánta memoria llegó a consumir el cluster en el momento de mayor carga?
+3. ¿Los tres workers participaron en el procesamiento o solo algunos?
+
+## 8. Alerta de uso de CPU
+Configura una alerta en Prometheus que se dispare cuando el uso de CPU del nodo supere el 60% durante más de un 10s. Para ello deberás modificar los archivos ``rules.yml``.
+Para comprobar su funcionamiento ejecuta una prueba de estrés desde el nodo master que genere carga suficiente para superar el umbral configurado. Observa cómo la alerta pasa por los estados PENDING y FIRING en http://localhost:9090/alerts y comprueba que finalmente aparece en la interfaz de Alertmanager en http://localhost:9093.
+
+## 9. Alerta de worker caído con notificación a Telegram
+Configura una alerta que detecte cuando uno de los workers del cluster se cae y envíe una notificación automática a Telegram. Para ello deberás modificar los archivos ``rules.yml`` y ``alertmanager.yml``.
+Para comprobar su funcionamiento para manualmente uno de los workers con ``docker stop spark-worker-2`` y verifica que la alerta se dispara en Prometheus, aparece en Alertmanager y el mensaje llega correctamente a Telegram.
+
+## 10. Visualización del cluster con Ganglia
+Añade ``docker-compose.ganglia.yml`` a tu infraestructura de monitorización e intégralo con el cluster de Spark. Ganglia es una herramienta de monitorización distribuida especialmente diseñada para clusters, que permite visualizar métricas de rendimiento de forma agregada. Una vez en funcionamiento, compara la información que ofrece Ganglia con la que ya tienes en Grafana y reflexiona sobre las diferencias entre ambas herramientas: qué visualiza mejor cada una, qué métricas están disponibles en una y no en la otra, y en qué escenarios usarías cada una de ellas.
 
 ## Entrega
 
 La entrega de esta actividad constará de dos partes:
 
 **1. Archivos del proyecto** — Se deberán entregar los siguientes archivos:
-- .
+- jobs.py
+- docker-compose.saprk.yml
+- prometheus.yml
 
 **2. Informe técnico** — Se redactará un informe siguiendo las pautas generales del curso. El informe debe incluir: portada con nombre, fecha y título de la actividad; índice numerado; desarrollo de cada uno de los 10 apartados con explicación de los pasos seguidos, comandos utilizados y capturas de pantalla como evidencia; apartado de conclusiones donde se reflexione sobre el funcionamiento del pipeline y las dificultades encontradas; y bibliografía o referencias consultadas.
 
