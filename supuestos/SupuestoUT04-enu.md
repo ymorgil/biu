@@ -35,9 +35,7 @@ spark-worker-3:8080 ──┘
 
 ## 1. Estructura del proyecto en Docker
 ---
-Organizaremos el proyecto en carpetas y archivos Docker Compose. 
->name es el nombre del alumnado.
-**Estructura sugerida:**
+
 ![arquitectura](/web/img/sup04-arq.png)
 
 

@@ -57,3 +57,6 @@
 * Se proponen y justifican dos campos adicionales (ej. visibilidad, coordenadas o descripción del clima) basados en su valor para un análisis de datos real.
 * El código final de `app.py` integra los nuevos campos y se entrega como versión definitiva del consumidor de streaming.
 * Se aporta una evidencia visual en la que se comprueba que las nuevas columnas aparecen correctamente en el DataFrame de Spark durante el procesamiento.
+
+### Rubricas de la entrega
+* Por cada pauta del curso incumplida restamos 0.5 en cualquiera de los apartados anteriores.
